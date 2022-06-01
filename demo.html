@@ -1,0 +1,28 @@
+<html>
+    <script src="https://expcdtest-developer-edition.na211.force.com/lightning/lightning.out.js"></script>
+    <div data-lightning-out="true"></div>
+
+        <script>
+            const appName = 'c:HelloAuraApp';
+            const componentName = 'c:helloLWC';
+            const lightningEndpoint = 'https://expcdtest-developer-edition.na211.force.com';
+            const targetElement = document.querySelector("[data-lightning-out]");
+            const componentAttributes = {};
+                $lightning.use(
+                    appName,
+                    function(){
+                        $lightning.createComponent(
+                            componentName,
+                        componentAttributes,
+                        targetElement,
+                        function(cmp){
+                            console.log('lightning component created');
+
+                        }
+                        );
+                    },
+                    lightningEndpoint
+                );
+        </script>
+    
+</html>
